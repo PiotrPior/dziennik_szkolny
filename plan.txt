@@ -1,0 +1,22 @@
+Projekt to prosta strona internetowa, która działa jak dziennik szkolny. Można w niej zarządzać uczniami, nauczycielami, przedmiotami, ocenami i obecnościami.
+System pozwala nauczycielowi dodawać oceny i obecności, a uczeń może je przeglądać.
+Projekt wykorzystuje podstawowe operacje na bazie danych, czyli dodawanie, wyświetlanie, edytowanie i usuwanie danych.
+Funkcje:
+    Użytkownicy:
+        można się zarejestrować i zalogować
+        są role: uczeń i nauczyciel
+        użytkownik może dodać sobie zdjęcie profilowe
+    Oceny:
+        nauczyciel może dodawać oceny
+        można je edytować i usuwać
+        uczeń może zobaczyć swoje oceny
+        do oceny można dodać opis (np. za co była)
+    Przedmioty:
+        można dodawać przedmioty
+        przypisać nauczyciela do przedmiotu
+    Obecności:
+        zapisywanie czy uczeń był obecny czy nie
+        możliwość sprawdzenia obecności
+
+Propozycja pana ze względu nad bezpieczenstwa:
+podzielić na 3 tabele usunąć users i przenieść jego dane z users do uczen, nauczyciele i admin(dyrektor) i dla kazdego osobne logowanie
