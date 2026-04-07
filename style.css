@@ -74,3 +74,16 @@ footer {
     text-align: center;
     padding: 10px;
 }
+
+.dark {
+    background-color: #222;
+    color: white;
+}
+
+.dark .box {
+    background: #333;
+}
+
+.dark .sidebar {
+    background: #111;
+}

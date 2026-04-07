@@ -19,6 +19,9 @@
         <a href="index.html">Panel główny</a>
         <a href="oceny.html">Oceny</a>
         <a href="obecnosc.html">Obecności</a>
+        <button onclick="zmniejsz()">A-</button>
+        <button onclick="zwieksz()">A+</button>
+        <button onclick="darkMode()">🌙</button>
     </div>
     <div class="main">
         <div class="box">
@@ -63,5 +66,19 @@
 </div>
 
 <footer>Wykonane przez: Piotr Pióro | eduDziennik</footer>
+<script>
+let size = 16;
+function zwieksz() {
+    size += 2;
+    document.body.style.fontSize = size + "px";
+}
+function zmniejsz() {
+    size -= 2;
+    document.body.style.fontSize = size + "px";
+}
+function darkMode() {
+    document.body.classList.toggle("dark");
+}
+</script>
 </body>
 </html>
