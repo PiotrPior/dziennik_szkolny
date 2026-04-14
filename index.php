@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['user'])) {
+    header("Location: login.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -13,13 +21,16 @@
     <div class="logo">
         <img src="logo.svg" alt="Logo" height="30">
     </div>
-    <div>Użytkownik: Jan Kowalski</div>
+    <div>
+    Użytkownik: <?php echo $_SESSION['user']; ?>
+    | <a href="logout.php">Wyloguj</a>
+    </div>
 </header>
 <div class="container">
     <div class="sidebar">
-        <a href="index.html">Panel główny</a>
-        <a href="oceny.html">Oceny</a>
-        <a href="obecnosc.html">Obecności</a>
+        <a href="index.php">Panel główny</a>
+        <a href="oceny.php">Oceny</a>
+        <a href="obecnosc.php">Obecności</a>
         <button onclick="zmniejsz()">A-</button>
         <button onclick="zwieksz()">A+</button>
         <button onclick="darkMode()">🌙</button>
