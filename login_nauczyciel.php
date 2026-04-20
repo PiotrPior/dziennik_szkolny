@@ -19,10 +19,13 @@ if (isset($_POST['email'])) {
     }
 }
 ?>
-
+<link rel="stylesheet" href="style.css">
+<div class="login-box">
 <form method="POST">
+    <h2>Logowanie Nauczyciel</h2>
     Email: <input type="text" name="email"><br>
     Hasło: <input type="password" name="haslo"><br>
-    <button type="submit">Zaloguj jako nauczyciel</button><br>
-    <a href="login.php">Zaloguj jako uczen</a>
+    <button type="submit">Zaloguj</button><br>
 </form>
+  <a href="login.php">Zaloguj jako uczen</a>
+</div>
