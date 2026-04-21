@@ -102,7 +102,7 @@ footer {
 }
 .login-box button {
     padding: 10px 20px;
-    background: #1abc9c;
+    background: #34495e;
     border: none;
     color: white;
     cursor: pointer;
@@ -110,7 +110,7 @@ footer {
 .login-box a {
     display: block;
     margin-top: 10px;
-    color: #1abc9c;
+    color: #34495e;
 }
 .panel {
     width: 400px;
@@ -129,7 +129,7 @@ footer {
 }
 .panel button {
     padding: 8px 15px;
-    background: #3498db;
+    background: #34495e;
     color: white;
     border: none;
     cursor: pointer;

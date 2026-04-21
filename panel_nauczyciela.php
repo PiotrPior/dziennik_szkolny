@@ -33,7 +33,7 @@ Użytkownik: <?php echo $_SESSION['nauczyciel']; ?>
     }
     ?>
     </select><br>
-    Ocena: <input type="number" name="ocena"><br>
+    Ocena: <input type="number" name="ocena" max="6" min="1"><br>
     <button type="submit" name="dodaj_ocene">Dodaj</button>
 </form>
 
