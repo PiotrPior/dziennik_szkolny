@@ -5,6 +5,13 @@ if (!isset($_SESSION['user'])) {
     header("Location: login.php");
     exit();
 }
+$conn = mysqli_connect("localhost", "root", "", "dziennik_szkolny");
+
+$uczen_id = $_SESSION['uczen_id'];
+
+$sql = "SELECT avatar FROM uczniowie WHERE id=$uczen_id";
+$wynik = mysqli_query($conn, $sql);
+$row = mysqli_fetch_assoc($wynik);
 ?>
 <!DOCTYPE html>
 <html lang="pl">
@@ -22,8 +29,17 @@ if (!isset($_SESSION['user'])) {
         <img src="logo.svg" alt="Logo" height="30">
     </div>
     <div>
-    Użytkownik: <?php echo $_SESSION['user']; ?>
-    | <a href="logout.php">Wyloguj</a>
+    <div>
+<a href="profil.php" class="user-box">
+    <?php
+    if ($row['avatar']) {
+        echo '<img src="data:image/jpeg;base64,'.base64_encode($row['avatar']).'">';
+    }
+    ?>
+    <?php echo $_SESSION['user']; ?>
+</a>
+</div>
+    <a href="logout.php">Wyloguj</a>
     </div>
 </header>
 <div class="container">

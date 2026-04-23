@@ -139,3 +139,59 @@ select {
     padding: 8px;
     margin: 5px 0;
 }
+.profile-box {
+    width: 350px;
+    margin: 50px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+.profile-box h2 {
+    margin-bottom: 15px;
+}
+.profile-box img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+.profile-box input {
+    margin: 10px 0;
+}
+.profile-box button {
+    padding: 8px 15px;
+    background: #34495e;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+.profile-box button:hover {
+    background: #1abc9c;
+}
+.back-btn {
+    display: inline-block;
+    margin-top: 15px;
+    text-decoration: none;
+    color: white;
+    background: #34495e;
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+.back-btn:hover {
+    background: #1abc9c;
+}
+.user-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    text-decoration: none;
+}
+.user-box img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+}
