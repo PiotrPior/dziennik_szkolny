@@ -76,17 +76,47 @@ $row = mysqli_fetch_assoc($wynik);
         <div class="box">
             <h3>Ostatnie oceny</h3>
             <ul>
-                <li>Matematyka - 5</li>
-                <li>Polski - 4</li>
-                <li>Informatyka - 6</li>
+                <?php
+                $sql = "SELECT oceny.ocena, przedmioty.nazwa, oceny.data
+                FROM oceny
+                JOIN przedmioty ON oceny.przedmiot_id = przedmioty.id
+                WHERE oceny.uczen_id = $uczen_id
+                AND oceny.data >= DATE_SUB(CURDATE(), INTERVAL 3 DAY)
+                ORDER BY oceny.data DESC";
+
+                $wynik = mysqli_query($conn, $sql);
+
+                if (mysqli_num_rows($wynik) > 0) {
+                    while ($row = mysqli_fetch_assoc($wynik)) {
+                        echo "<li>".$row['nazwa']." - ".$row['ocena']." (".$row['data'].")</li>";
+                    }
+                } else {
+                    echo "<li>Brak ocen z ostatnich dni</li>";
+                }
+                ?>
             </ul>
         </div>
         <div class="box">
             <h3>Ostatnie obecności</h3>
             <ul>
-                <li>Matematyka - obecny</li>
-                <li>Polski - obecny</li>
-                <li>Informatyka - nieobecny</li>
+                <?php
+                $sql = "SELECT obecnosci.status, przedmioty.nazwa, obecnosci.data
+                FROM obecnosci
+                JOIN przedmioty ON obecnosci.przedmiot_id = przedmioty.id
+                WHERE obecnosci.uczen_id = $uczen_id
+                AND obecnosci.data >= DATE_SUB(CURDATE(), INTERVAL 3 DAY)
+                ORDER BY obecnosci.data DESC";
+
+                $wynik = mysqli_query($conn, $sql);
+
+                if (mysqli_num_rows($wynik) > 0) {
+                    while ($row = mysqli_fetch_assoc($wynik)) {
+                        echo "<li>".$row['nazwa']." - ".$row['status']." (".$row['data'].")</li>";
+                    }
+                } else {
+                    echo "<li>Brak obecności z ostatnich dni</li>";
+                }
+                ?>
             </ul>
         </div>
         <div class="box">
