@@ -31,4 +31,5 @@ if (isset($_POST['email'])) {
     <button type="submit">Zaloguj</button>
 </form>
 <a href="login_nauczyciel.php">Zaloguj jako nauczyciel</a>
+<a href="login_admin.php">Zaloguj jako admin</a>
 </div>
